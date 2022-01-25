@@ -22,6 +22,8 @@
     const menu = document.querySelector( '.menu' );
     const navMobile = document.querySelector( '.nav__mobile' );
     const mobileWrapper = document.querySelector( '.mobile__wrapper' );
+    const mobileClicks = document.querySelectorAll( '.mobile-click' );
+    const inputClick = document.querySelector( '.input-click' );
 
     menu.addEventListener( 'click', () => {
         navMobile.classList.add( 'nav__mobile--show' );
@@ -29,7 +31,8 @@
     } );
 
     window.addEventListener( 'click', (e) => {
-        if( e.target != menu && e.target !== mobileWrapper ) {
+        if( e.target !== menu && e.target !== mobileWrapper
+             && e.target !== mobileClicks && e.target !== inputClick) {
             navMobile.classList.remove( 'nav__mobile--show' );
             mobileWrapper.classList.remove( 'mobile__wrapper--show' );
         } 
